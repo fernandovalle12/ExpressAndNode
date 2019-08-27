@@ -9,9 +9,14 @@
     
     <div class="container">
       <div class="row">
-        <% posts.forEach((post) => { %>
-          <%- include('post_card', { post: post }); -%>
-        <% }); %>
+        
+        <div class="post-detail">
+            <img src="/images/<%= post.image %>" />
+            <h1><%= post.title %></h1>
+            <p><%= post.body %></p>
+        </div>
+        
+
       </div>
     </div>
 
