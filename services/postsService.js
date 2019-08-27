@@ -21,6 +21,13 @@ var getPosts = function() {
       image: 'post2.jpg',
       description: 'Novo sistema do meu blog',
       body: 'Esse é o novo sistema do blog da Católica de SC'
+    },
+    {
+      id: 4,
+      title: 'Sobre Angular',
+      image: 'post2.jpg',
+      description: 'Porque usar Angular',
+      body: 'Minha opinião sobre a linguagem'
     }
   ];
 
