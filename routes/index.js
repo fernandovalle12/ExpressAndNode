@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var postsService = require('../services/postsService');
 var projectService = require('../services/projectService');
+var noticiasService = require('../services/noticiasService');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -36,4 +37,13 @@ router.get('/Projects', function(req, res, next){
 
   res.render('Projects', { title: projects.title, project: project})
 });
+
+router.get('/noticias', function(req, res, next){
+  var noticia = noticiasService.getNoticias();
+
+  res.render('Noticias', { title: 'Noticias', noticia: noticia});
+});
+
 module.exports = router;
+
+
