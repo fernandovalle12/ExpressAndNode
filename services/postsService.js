@@ -1,39 +1,31 @@
+var fs = require('fs');
 
-var getPosts = function() {
-  var posts = [
-    {
-      id: 1,
-      title: 'Post 1',
-      image: 'post1.jpg',
-      description: 'Meu primeiro post',
-      body: 'Meu primeiro post bla blaa sdfa sdfas df asdf asdf asdf asdf'
-    },
-    {
-      id: 2,
-      title: 'Post 2',
-      image: 'post2.jpg',
-      description: 'Meu segundo post',
-      body: 'Meu segundo post bla bla asd f 2'
-    },
-    {
-      id: 3,
-      title: 'Sistema automatico de posts',
-      image: 'post2.jpg',
-      description: 'Novo sistema do meu blog',
-      body: 'Esse é o novo sistema do blog da Católica de SC'
-    },
-    {
-      id: 4,
-      title: 'Sobre Angular',
-      image: 'post2.jpg',
-      description: 'Porque usar Angular',
-      body: 'Minha opinião sobre a linguagem'
-    }
-  ];
+var postsFilePath = 'db/posts.json';
+
+var loadFilePosts = function() {
+  var fileData = fs.readFileSync(postsFilePath, 'utf8');
+  var posts = JSON.parse(fileData);
 
   return posts;
 }
 
+var saveFilePosts = function(posts) {
+  var data = JSON.stringify(posts);
+  fs.writeFileSync(postsFilePath, data, 'utf8');
+}
+
+var getPosts = function() {
+  var posts = loadFilePosts();
+  return posts;
+}
+
+var savePost = function(newPost) {
+  var posts = loadFilePosts();
+  posts.push(newPost);
+  saveFilePosts(posts);
+}
+
 module.exports = {
-  getPosts: getPosts
+  getPosts: getPosts,
+  savePost: savePost
 }
