@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Testemonials</title>
+  <title>Projects</title>
   <%- include('../../imports'); -%>
 </head>
 <body>
   <%- include('../../navbar'); -%>
   <div class="container">
     <div class="row">
-        <h1>Administração de Testemonials</h1>
+        <h1>Administração de Projects</h1>
     </div>
 
     <div class="row mb-2">
-        <a href="/admin/testemonials/create" class="btn btn-success">Novo Testemonial</a>
+        <a href="/admin/project/create" class="btn btn-success">Novo Project</a>
     </div>
 
     <div class="row">
@@ -25,10 +25,10 @@
               </tr>
             </thead>
             <tbody>
-              <% testemonials.forEach((testemonial) => { %>
+              <% project.forEach((project) => { %>
                 <tr>
-                  <td><%= testemonial.id %></td>
-                  <td><%= testemonial.title %></td>
+                  <td><%= project.id %></td>
+                  <td><%= project.title %></td>
                 </tr>
               <% }); %>
               

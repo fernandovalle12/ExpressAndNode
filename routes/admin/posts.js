@@ -12,13 +12,12 @@ router.get('/', function(req, res, next) {
   res.render('admin/posts/index', data);
 });
 
-router.get('/createPosts', function(req, res, next) {
+router.get('/create', function(req, res, next) {
 
   res.render('admin/posts/create');
 });
 
-
-router.post('/create', function(req, res, next) {
+router.post('/create', function (req, res, next) {
   var posts = postsService.getPosts();
 
   var newId = posts.length + 1;

@@ -19,13 +19,13 @@ var getTestemonials = function() {
   return testemonials;
 }
 
-var saveTestemonials = function(newPost) {
+var saveTestemonial = function(newTestemonials) {
   var testemonials = loadTestemonials();
-  testemonials.push(newPost);
+  testemonials.push(newTestemonials);
   saveFileTestemonials(testemonials);
 }
 
 module.exports = {
   getTestemonials: getTestemonials,
-  saveTestemonials: saveTestemonials
+  saveTestemonial: saveTestemonial
 }

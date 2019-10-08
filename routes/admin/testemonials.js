@@ -2,13 +2,7 @@ var express = require('express');
 var router = express.Router();
 var testemonialsService = require('../../services/testemonialsService');
 
-router.get('/createTestemonials', function(req, res, next) {
-
-  res.render('admin/testemonials/index');
-});
-
-
-router.get('/testemonials', function(req, res, next) {
+router.get('/', function(req, res, next) {
   var testemonials = testemonialsService.getTestemonials();
   
   var data = {
@@ -18,20 +12,25 @@ router.get('/testemonials', function(req, res, next) {
   res.render('admin/testemonials/index', data);
 });
 
-router.post('/create', function(req, res, next){
+router.get('/create', function(req, res, next) {
+
+  res.render('admin/testemonials/create');
+});
+
+router.post('/create', function (req, res, next) {
   var testemonials = testemonialsService.getTestemonials();
 
   var newId = testemonials.length + 1;
 
-  var newTestemonials = {};
-  newTestemonials.id = newId;
-  newTestemonials.title = req.body.title;
-  newTestemonials.description = req.body.description;
+  var newTestemonial = {};
+  newTestemonial.id = newId;
+  newTestemonial.title = req.body.title;
+  newTestemonial.image = req.body.image;
+  newTestemonial.description = req.body.description;
 
-  testemonialsService.savePost(newPost);
+  testemonialsService.saveTestemonial(newTestemonial);
 
-  res.redirect('/admin/testimonials');
-
-})
+  res.redirect('/admin/testemonials');
+});
 
 module.exports = router;
