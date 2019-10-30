@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var postsService = require('../services/postsService');
-var projectService = require('../services/projectService');
+var productService = require('../services/productService');
 var noticiasService = require('../services/noticiasService');
 
 /* GET home page. */
@@ -28,14 +28,14 @@ router.get('/posts', function(req, res, next){
   res.render('allPosts', { title: 'Posts', posts: posts});
 });
 
-router.get('/Projects', function(req, res, next){
-  var projectId = req.params.projectId;
+router.get('/product', function(req, res, next){
+  var productId = req.params.productId;
 
-  var project = projectService.getProject();
+  var product = productService.getProduct();
 
-  var projects = project.filter((projects) => project.id == projectId)[0];
+  var products = product.filter((products) => product.id == productId)[0];
 
-  res.render('Projects', { title: projects.title, project: project})
+  res.render('product', { title: products.title, product: product})
 });
 
 router.get('/noticias', function(req, res, next){

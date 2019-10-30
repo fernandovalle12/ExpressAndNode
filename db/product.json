@@ -1,0 +1,13 @@
+[{
+  "id": 1,
+  "title": "Apple iPhone 11",
+  "description": "iPhone 11 Pro - 64GB - White",
+  "price": "7900,00",
+  "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-max-silver-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566953858420"
+}, {
+  "id": 2,
+  "title": "iPhone XS Max",
+  "description": "iPhone XS Max - 256GB - White",
+  "image": "https://a-static.mlcdn.com.br/618x463/iphone-xs-max-apple-64gb-prata-4g-tela-65-retina-camera-dupla-12mp-selfie-7mp-ios-12/magazineluiza/220557400/11a9cade1252a8f93703b91df651e185.jpg",
+  "price": "6000,00"
+}]

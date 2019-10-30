@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+  <%- include('../../imports'); -%>
+</head>
+
+<body>
+  <%- include('../../navbar'); -%>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>New Product</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <form action="create" method="POST">
+          <div class="form-group">
+            <label for="productTitle">Title</label>
+            <input name="title" type="text" class="form-control" id="productTitle">
+          </div>
+          <div class="form-group">
+            <label for="productImage">Image URL</label>
+            <input name="image" type="text" class="form-control" id="productImage">
+          </div>
+          <div class="form-group">
+            <label for="productDescription">Description</label>
+            <textarea name="description" type="text" class="form-control" id="productDescription"></textarea>
+          </div>
+
+          <label for="productPrice">Price</label>
+          <div class="input-group col-md-3" style="padding-left: 0px">
+            <div class="input-group-prepend">
+              <span class="input-group-text">R$</span>
+            </div>
+            <input name="price" type="text" class="form-control" id="productPrice"></input>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
